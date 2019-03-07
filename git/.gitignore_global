@@ -1,0 +1,7 @@
+*~
+._*
+.DS_STORE
+.idea
+.vscode
+node_modules
+npm-debug.log
