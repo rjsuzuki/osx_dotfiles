@@ -11,7 +11,7 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 back_up=true
 xcode=false
-homebrew=false
+homebrew=true
 symlinks=true
 vim=true
 zsh=true
@@ -41,8 +41,8 @@ if [ $homebrew = true ] ; then
 	echo '*********************************'
 	echo '*INSTALL HOMEBREW and dependencies'
 	echo '*********************************'
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
-	echo 'update brew'
+    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install
+	echo '***** update brew *****'
 	brew update
 fi
 
