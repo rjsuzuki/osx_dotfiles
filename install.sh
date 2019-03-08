@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # get current directory
+echo 'create dir'
 export DOTFILES_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -17,7 +18,7 @@ zsh=true
 bash=true
 android=false
 
-if [ back_up = true ] ; then
+if [ $back_up = true ]; then
 	echo "*********************************"
 	echo "* BACKUP DOTFILES"
 	echo "*********************************"
@@ -28,7 +29,7 @@ if [ back_up = true ] ; then
 	mv "~/.bash_profile" $BACKUP_DIR
 fi
 
-if [ xcode = true ] ; then	
+if [ $xcode = true ] ; then	
 	echo "*********************************"
 	echo "* INSTALL XCODE"
 	echo "*********************************"
@@ -36,7 +37,7 @@ if [ xcode = true ] ; then
 	sudo xcodebuild -license
 fi
 
-if [ homebrew = true ] ; then 
+if [ $homebrew = true ] ; then 
 	echo '*********************************'
 	echo '*INSTALL HOMEBREW and dependencies'
 	echo '*********************************'
@@ -45,7 +46,7 @@ if [ homebrew = true ] ; then
 	brew update
 fi
 
-if [ symlinks = true ] ; then	
+if [ $symlinks = true ] ; then	
 	echo "*****************************"
 	echo "* SYMLINKS"
 	echo "*****************************"
@@ -60,7 +61,7 @@ if [ symlinks = true ] ; then
 	ln -sf "$DOTFILES_DIR/vim/.vimrc" ~
 fi
 
-if [ vim = true ] ; then 
+if [ $vim = true ] ; then 
 	echo "*****************************"
 	echo "* Installing MAC VIM and Plugins..."
 	echo "*****************************"
@@ -68,7 +69,7 @@ if [ vim = true ] ; then
 	vim +PluginInstall +qall
 fi
 
-if [ zsh = true ] ; then 
+if [ $zsh = true ] ; then 
 	echo "*****************************"
 	echo "* Installing ZSH"
 	echo "*****************************"
@@ -94,7 +95,7 @@ if [ zsh = true ] ; then
 	source ~/zsh/.zshrc
 fi
 
-if [ bash = true ] ; then 
+if [ $bash = true ] ; then 
 	echo "*****************************"
 	echo '* set bash_profile'
 	echo "*****************************"
@@ -103,7 +104,7 @@ if [ bash = true ] ; then
 	chmod 700 ~/bash/.bashrc
 fi
 
-if [ android = true ] ; then
+if [ $android = true ] ; then
 	echo "*****************************"
 	echo 'install android studio and set sdk path'
 	echo "*****************************"
@@ -113,7 +114,7 @@ if [ android = true ] ; then
 
 	curl -O "https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.2.1-stable.zip"
 	unzip ~/flutter_macos_v1.2.1-stable.zip
-	export PATH=$PATH:`pwd`/flutter/bin"
+	export PATH="$PATH:`pwd`/flutter/bin"
 	echo 'update flutter'
 	flutter doctor
 fi

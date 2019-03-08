@@ -16,5 +16,5 @@ export PATH="$PATH:~/bin"
 ## Installation
 
 ```git clone https://github.com/rjsuzuki/osx-dotfiles.git ~/osx-dotfiles
-	source ~/osx-dotfiles/install.sh
+   sh ~/osx-dotfiles/install.sh
 ```
