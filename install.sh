@@ -1,22 +1,29 @@
 #!/bin/bash
 
+# -------------------------------------------
 # get current directory
-echo 'create dir'
+# -------------------------------------------
+
 export DOTFILES_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-#********************************
-# Switches
-#********************************
+#****************************************
+# Switches - edit these to install or not
+#****************************************
 
 back_up=true
-xcode=false
+xcode=true
 homebrew=true
 symlinks=true
 vim=true
 zsh=true
 bash=true
-android=false
+android=true
+npm=true
+
+#--------------------------------------------
+# copy system's dotfiles and store in backup folder
+#--------------------------------------------
 
 if [ $back_up = true ]; then
 	echo "*********************************"
@@ -46,6 +53,14 @@ if [ $homebrew = true ] ; then
 	brew update
 fi
 
+if [ $vim = true ] ; then
+echo "*****************************"
+echo "* Installing MAC VIM and Plugins..."
+echo "*****************************"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+fi
+
 if [ $symlinks = true ] ; then	
 	echo "*****************************"
 	echo "* SYMLINKS"
@@ -61,14 +76,6 @@ if [ $symlinks = true ] ; then
 	ln -sf "$DOTFILES_DIR/vim/.vimrc" ~
 fi
 
-if [ $vim = true ] ; then 
-	echo "*****************************"
-	echo "* Installing MAC VIM and Plugins..."
-	echo "*****************************"
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	vim +PluginInstall +qall
-fi
-
 if [ $zsh = true ] ; then 
 	echo "*****************************"
 	echo "* Installing ZSH"
@@ -79,7 +86,7 @@ if [ $zsh = true ] ; then
 	echo "*****************************"
 	echo "* oh my zsh"
 	echo "*****************************"
-	# . "$DOTFILES_DIR/install/oh-my-zsh.sh"
+	#. "$DOTFILES_DIR/install/oh-my-zsh.sh"
 
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -90,9 +97,9 @@ if [ $zsh = true ] ; then
 	brew install fonts-powerline
 
 	# create symlink
-	ln -s "$HOME/.oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme" "$HOME/.oh-my-zsh/themes/spaceship.zsh-theme"
+	ln -s "$HOME/.oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme" "$HOME/.oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme"
 
-	source ~/zsh/.zshrc
+	source ~/.zshrc
 fi
 
 if [ $bash = true ] ; then 
@@ -119,5 +126,15 @@ if [ $android = true ] ; then
 	flutter doctor
 fi
 
-
-
+if [ $npm = true ] ; then
+    echo "****************************"
+    echo 'installing npm and nvm'
+    echo "****************************"
+    brew install node -y
+    brew install npm -y
+    npm install npm@latest -gy
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+    echo "****************************"
+    echo 'confirming nvm is installed'
+    nvm -v
+fi

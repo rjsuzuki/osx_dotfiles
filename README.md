@@ -11,10 +11,16 @@ export PATH="$PATH:~/bin"
 
 .bash_profile is convention
 
-
+## To Do
+script for json.tool
+echo [string] | python -m json.tool
 
 ## Installation
 
 ```git clone https://github.com/rjsuzuki/osx-dotfiles.git ~/osx-dotfiles
    sh ~/osx-dotfiles/install.sh
 ```
+
+
+
+
