@@ -2,11 +2,10 @@ if [ -r ~/.bashrc ]; then
 	source ~/.bashrc
 fi
 
-for DOTFILE in 'find /home/ryan/.dotfiles'
+for DOTFILE in 'find /$HOME/.dotfiles'
 do 
 	[ -f "$DOTFILE" ] && source "$DOTFILE"
 done
-
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -27,16 +26,17 @@ fi
 
 #------------------------------------------------
 
-
 #Android studio
 
 #flutter
 
 #homebrew
 #export "$HOME/homebrew/bin/brew.sh"
+#echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 
 source ~/.profile
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/bin:$PATH"

@@ -11,21 +11,21 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Switches - edit these to install or not
 #****************************************
 
-back_up=true
-xcode=true
-homebrew=true
-symlinks=true
-vim=true
-zsh=true
-bash=true
-android=true
-npm=true
+back_up=1
+xcode=0
+homebrew=1
+symlinks=1
+vim=1
+zsh=1
+
+android=0
+npm=1
 
 #--------------------------------------------
 # copy system's dotfiles and store in backup folder
 #--------------------------------------------
 
-if [ $back_up = true ]; then
+if [ $back_up == 1 ]; then
 	echo "*********************************"
 	echo "* BACKUP DOTFILES"
 	echo "*********************************"
@@ -36,32 +36,7 @@ if [ $back_up = true ]; then
 	mv "~/.bash_profile" $BACKUP_DIR
 fi
 
-if [ $xcode = true ] ; then	
-	echo "*********************************"
-	echo "* INSTALL XCODE"
-	echo "*********************************"
-	sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-	sudo xcodebuild -license
-fi
-
-if [ $homebrew = true ] ; then 
-	echo '*********************************'
-	echo '*INSTALL HOMEBREW and dependencies'
-	echo '*********************************'
-    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install
-	echo '***** update brew *****'
-	brew update
-fi
-
-if [ $vim = true ] ; then
-echo "*****************************"
-echo "* Installing MAC VIM and Plugins..."
-echo "*****************************"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-fi
-
-if [ $symlinks = true ] ; then	
+if [ $symlinks == 1 ] ; then	
 	echo "*****************************"
 	echo "* SYMLINKS"
 	echo "*****************************"
@@ -76,7 +51,34 @@ if [ $symlinks = true ] ; then
 	ln -sf "$DOTFILES_DIR/vim/.vimrc" ~
 fi
 
-if [ $zsh = true ] ; then 
+if [ $xcode == 1 ] ; then	
+	echo "*********************************"
+	echo "* INSTALL XCODE"
+	echo "*********************************"
+	sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+	sudo xcodebuild -license
+fi
+
+if [ $homebrew == 1 ] ; then 
+	echo '*********************************'
+	echo '*INSTALL HOMEBREW and dependencies'
+	echo '*********************************'
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
+	echo '***** add to PATH *****'
+	echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile		
+	echo '***** update brew *****'	
+	brew update
+fi
+
+if [ $vim == 1 ] ; then
+	echo "*****************************"
+	echo "* Installing MAC VIM and Plugins..."
+	echo "*****************************"
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	vim +PluginInstall +qall
+fi
+
+if [ $zsh == 1 ] ; then 
 	echo "*****************************"
 	echo "* Installing ZSH"
 	echo "*****************************"
@@ -102,16 +104,7 @@ if [ $zsh = true ] ; then
 	source ~/.zshrc
 fi
 
-if [ $bash = true ] ; then 
-	echo "*****************************"
-	echo '* set bash_profile'
-	echo "*****************************"
-
-	chmod 700 ~/bash/.bash_profile
-	chmod 700 ~/bash/.bashrc
-fi
-
-if [ $android = true ] ; then
+if [ $android == 1 ] ; then
 	echo "*****************************"
 	echo 'install android studio and set sdk path'
 	echo "*****************************"
@@ -126,7 +119,7 @@ if [ $android = true ] ; then
 	flutter doctor
 fi
 
-if [ $npm = true ] ; then
+if [ $npm == 1 ] ; then
     echo "****************************"
     echo 'installing npm and nvm'
     echo "****************************"
