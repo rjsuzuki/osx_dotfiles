@@ -114,7 +114,11 @@ if [ $android == 1 ] ; then
 
 	curl -O "https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.2.1-stable.zip"
 	unzip ~/flutter_macos_v1.2.1-stable.zip
-	export PATH="$PATH:`pwd`/flutter/bin"
+	
+    # Need to verify this line
+    echo 'export PATH="$PATH:/usr/flutter/bin"' >> ~/.bash_profile
+    
+    source ~/.bash_profile
 	echo 'update flutter'
 	flutter doctor
 fi
