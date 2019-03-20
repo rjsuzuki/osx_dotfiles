@@ -1,15 +1,11 @@
 # Setting $PATH
-# export PATH=
-#export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$H
 
 # Path to the oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-#ln -s "$HOME/.oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme" "$H    OME/.oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme"
-#ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-
 # ZSH theme to display. "agnoster" is famous theme.	
-ZSH_THEME=spaceship
+ZSH_THEME="random"
 
 # Enable command auto-correction.
 ENABLE_CORRECTION="true"

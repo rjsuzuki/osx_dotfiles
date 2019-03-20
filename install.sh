@@ -13,13 +13,13 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 back_up=1
 xcode=0
-homebrew=1
+homebrew=0
 symlinks=1
-vim=1
+vim=0
 zsh=1
-
+ios=0
 android=0
-npm=1
+npm=0
 
 #--------------------------------------------
 # copy system's dotfiles and store in backup folder
@@ -102,6 +102,20 @@ if [ $zsh == 1 ] ; then
 	ln -s "$HOME/.oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme" "$HOME/.oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme"
 
 	source ~/.zshrc
+fi
+
+if [ $ios == 1 ] ; then
+    echo "*****************************"
+    echo "installing ios libraries"
+    echo "*****************************"
+
+    brew install --HEAD usbmuxd
+    brew link usbmuxd
+    brew install --HEAD libimobiledevice
+    brew install ideviceinstaller
+    brew install ios-deploy
+    brew install cocoapods
+    pod setup
 fi
 
 if [ $android == 1 ] ; then

@@ -16,7 +16,6 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
 export PATH=$PATH:/homebrew/bin/brew.sh
-
-
-
+#may need to edit this
+export PATH=$PATH:/Users/ryansuzuki/Downloads/flutter/bin
 
