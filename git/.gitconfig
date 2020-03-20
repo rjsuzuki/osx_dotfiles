@@ -2,3 +2,5 @@
 
 	email = ryanjsuzuki@gmail.com
 	name = rjsuzuki
+[core]
+	autocrlf = input

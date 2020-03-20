@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+set nocompatible
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -29,6 +29,10 @@ Plugin 'tpope/vim-rails'
 
 Plugin 'pangloss/vim-javascript'
 
+Plugin 'prettier/vim-prettier'
+
+" Plugin 'prettier/vim-prettier'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -43,6 +47,11 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+let g:prettier#exec_cmd_path = "~/.vim/bundle/prettier"
+let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue Prettier
+
 
 set autoindent
 set tabstop=4

@@ -11,12 +11,12 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Switches - edit these to install or not
 #****************************************
 
-back_up=1
+back_up=0
 xcode=0
 homebrew=0
 symlinks=1
 vim=0
-zsh=1
+zsh=0
 ios=0
 android=0
 npm=0

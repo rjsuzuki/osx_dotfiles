@@ -17,5 +17,9 @@ export LANG="en_US"
 
 export PATH=$PATH:/homebrew/bin/brew.sh
 #may need to edit this
+
+export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/Users/ryansuzuki/Downloads/flutter/bin
+export PATH=$PATH:/Users/ryansuzuki/Projects/osx_dotfiles/tools
 

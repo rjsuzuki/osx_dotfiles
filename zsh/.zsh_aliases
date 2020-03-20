@@ -36,7 +36,7 @@ alias gp="git push"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias ipl="hostname -I"
+alias ipl="hostname -fs"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Prevent ZSH from throwing autocorrect for weird-looking Sass commands
@@ -44,3 +44,9 @@ alias sass='nocorrect sass'
 
 # Switch back to bash
 alias gobash="chsh -s /bin/bash"
+
+# HELP commands
+alias helpme="cat Help is on the way..."
+
+alias bundletool="java -jar $HOME/Projects/osx_dotfiles/tools/bundletool-all-0.13.3.jar"
+
