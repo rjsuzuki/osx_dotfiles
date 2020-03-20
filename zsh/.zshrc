@@ -4,6 +4,8 @@
 # Path to the oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
 # ZSH theme to display. "agnoster" is famous theme.	
 ZSH_THEME="spaceship"
 
@@ -30,6 +32,7 @@ SPACESHIP_DOCKER_SHOW=false
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_exports
 source $HOME/.zsh_aliases
+
 
 
 # tabtab source for serverless package

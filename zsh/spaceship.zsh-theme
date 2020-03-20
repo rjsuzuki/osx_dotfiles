@@ -1,0 +1,1 @@
+/Users/ryansuzuki/.oh-my-zsh/custom/themes/spaceship.zsh-theme
