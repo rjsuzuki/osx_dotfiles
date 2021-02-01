@@ -17,3 +17,5 @@ export PATH={$PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH="$PATH:$HOME/Downloads/flutter/bin"
 export PATH="$PATH:$HOME/Projects/osx_dotfiles/tools"
 
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
