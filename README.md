@@ -23,4 +23,15 @@ echo [string] | python -m json.tool
 
 
 
-
+## Libs
+- Android Studio + buildtools path + adb path
+- XCode + ios libs
+- Homebrew
+- zsh
+- vim
+- git
+- npm + nvm
+- ruby + gems
+- atom.io + path
+- android 
+ 
