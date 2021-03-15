@@ -66,8 +66,14 @@ if [ $homebrew == 1 ] ; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"	
 	echo '***** add to PATH *****'
 	echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile		
-	echo '***** update brew *****'	
+	echo '***** Update deps with brew *****'	
 	brew update
+	echo '***** Showing all outdated deps with brew *****'	
+	brew outdated
+	echo '***** Upgrading all deps with brew *****'	
+	brew upgrade
+	echo '***** Checking system for potential problems with brew *****'	
+	brew doctor
 fi
 
 if [ $vim == 1 ] ; then
