@@ -16,28 +16,15 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
 export PATH=$PATH:/homebrew/bin/brew.sh
-#may need to edit this
 
-# try NDK-Bundle path
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export ANDROID_NDK=/Users/$USER/Downloads/android-ndk-r21d
-#export ANDROID_NDK=/Users/$USER/Downloads/android-ndk-r19c
-#export ANDROID_NDK=/Users/$USER/Downloads/android-ndk-r20b
-#export ANDROID_NDK=/Users/$USER/Downloads/android-ndk-r18b
 
 #NDK TOOLS
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK"
 
-#e
-# 18.1.5063045
-# 19.2.5345600
-# 20.0.5594570
-# 20.1.5948944
-# 21.0.6113669
-# 21.3.6528147
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/Users/ryansuzuki/Downloads/flutter/bin
-export PATH=$PATH:/Users/ryansuzuki/Projects/osx_dotfiles/tools
 export ADB=$ANDROID_HOME/plaform-tools/adb
 
 export PATH=$PATH:/usr/local/bin/python3.8
