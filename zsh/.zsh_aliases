@@ -51,8 +51,3 @@ alias helpme="cat Help is on the way..."
 alias bundletool="java -jar $HOME/Projects/osx_dotfiles/tools/bundletool-all-0.13.3.jar"
 
 alias python=/usr/local/bin/python3
-
-
-
-# Docker alias
-alias studio="docker-compose -f docker-compose.yaml -f local.yaml -f external.yaml"
