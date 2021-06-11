@@ -11,6 +11,11 @@ alias ....="cd ../../.."
 alias ~="cd ~"
 alias -- -="cd -"
 
+# More directory traversal
+# alias b="cd .."
+# alias bb="cd ../.."
+# alias bbb="cd ../../.."
+
 # Directory listing
 # Colors courtesy https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -26,10 +31,7 @@ alias la="ls -laF ${colorflag}"
 alias lsd="ls -lF ${co#lorflag} | grep --color=never '^d'"
 alias ls="command ls ${colorflag}"
 
-alias b="cd .."
-alias bb="cd ../.."
-alias bbb="cd ../../.."
-
+# Git shortcuts
 alias ga="git add -A"
 alias gc="git commit -m"
 alias gp="git push"
@@ -46,8 +48,13 @@ alias sass='nocorrect sass'
 alias gobash="chsh -s /bin/bash"
 
 # HELP commands
-alias helpme="cat Help is on the way..."
+alias help="sh $HOME/help.sh"
+
+# Random password generator
+randompw="openssl rand -base64 32"
+rpw="openssl rand -base64 32"
 
 alias bundletool="java -jar $HOME/Projects/osx_dotfiles/tools/bundletool-all-0.13.3.jar"
 
+# python3 shortcut
 alias python=/usr/local/bin/python3

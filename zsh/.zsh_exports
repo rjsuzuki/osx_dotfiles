@@ -1,4 +1,4 @@
-#et the shell
+# Set the shell
 export SHELL=/bin/zsh
 
 # Default editor
@@ -15,22 +15,24 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
+# HOMEBREW
 export PATH=$PATH:/homebrew/bin/brew.sh
 
-export ANDROID_HOME=/Users/$USER/Library/Android/sdk
-export ANDROID_NDK=/Users/$USER/Downloads/android-ndk-r21d
+# export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+# export ANDROID_NDK=/Users/$USER/Downloads/android-ndk-r21d
 
-#NDK TOOLS
-export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK"
+# NDK TOOLS
+# Uncomment below for setting up Android dependencies
+# export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK"
+# export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+# export PATH=$PATH:/Users/ryansuzuki/Downloads/flutter/bin
+# export ADB=$ANDROID_HOME/plaform-tools/adb
+# export PATH=$PATH:$ANDROID_NDK
+# export PATH=$PATH:$ANDROID_HOME
 
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH=$PATH:/Users/ryansuzuki/Downloads/flutter/bin
-export ADB=$ANDROID_HOME/plaform-tools/adb
-
+# PYTHON
 export PATH=$PATH:/usr/local/bin/python3.8
 export PATH=$PATH:/Users/Library/Python/2.7/bin
-export PATH=$PATH:$ANDROID_NDK
-export PATH=$PATH:$ANDROID_HOME
+
+# RUBY
 export PATH=$PATH:/usr/local/lib/ruby/gems/2.7.0/bin
-
-
