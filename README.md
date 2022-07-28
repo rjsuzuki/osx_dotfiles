@@ -96,6 +96,13 @@ sudo source $HOME/.dotfiles/install.sh
 - append to existing Path with: `export PATH="\$PATH:~/bin"`
 - `.bash_profile` is convention
 
+### When things get really bad: Reset
+
+Enter this for temp help. Add to bash/zsh profile to fully restore default `PATH` on osx.
+```bash
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+```
+
 ### Credits
 
 🙏 Cheers to the [dotfile community](https:///dotfiles.github.io).
