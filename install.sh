@@ -68,7 +68,6 @@ if [ $homebrew == 1 ] ; then
 	echo "-------------------------------------------"
 	echo ' INSTALL HOMEBREW and dependencies'
 	echo "-------------------------------------------"
-  #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 	brew update
@@ -136,10 +135,9 @@ if [ $apps == 1 ] ; then
 	figlet -c Apps
 
 	echo "-------------------------------------------"
-	echo "Installing chrome..."
+	echo "Installing firefox..."
 	echo "-------------------------------------------"
-	brew install --cask google-chrome
-	#brew install --cask firefox
+	brew install --cask firefox
 
 	echo "-------------------------------------------"
 	echo "Installing slack..."
@@ -183,10 +181,7 @@ if [ $android == 1 ] ; then
 	#curl -O "https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.2.1-stable.zip"
 	#unzip ~/flutter_macos_v1.2.1-stable.zip
 
-  # Need to verify this line
-  # echo 'export PATH="$PATH:/usr/flutter/bin"' >> ~/.bash_profile
-
-  #source ~/.bash_profile
+Zce ~/.bash_profile
 	echo 'update flutter'
 	flutter doctor
 fi
