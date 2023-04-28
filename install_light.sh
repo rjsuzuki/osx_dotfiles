@@ -15,6 +15,7 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 back_up=1
 symlinks=1
 zsh=1
+homebrew=1
 tools=1
 
 #--------------------------------------------
@@ -47,6 +48,21 @@ if [ $symlinks == 1 ] ; then
 	ln -sf "$DOTFILES_DIR/bash/.bash_profile" ~
 	ln -sf "$DOTFILES_DIR/bash/.bashrc" ~
 	ln -sf "$DOTFILES_DIR/vim/.vimrc" ~
+fi
+
+#--------------------------------------------
+# HOMEBREW
+#--------------------------------------------
+if [ $homebrew == 1 ] ; then
+	echo "-------------------------------------------"
+	echo ' INSTALL HOMEBREW and dependencies'
+	echo "-------------------------------------------"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+	brew update
+
+	echo '----- add to PATH -----'
+	echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 fi
 
 #--------------------------------------------
