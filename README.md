@@ -60,10 +60,18 @@ Preferably with a new installation of osx.
 
 1. Run the following cmd:
 
+Full Installation
 ```bash
 cd $HOME
 git clone https://github.com/rjsuzuki/osx_dotfiles.git ~/.dotfiles
 source ~/.dotfiles/install.sh
+```
+
+Light Installation
+```bash
+cd $HOME
+git clone https://github.com/rjsuzuki/osx_dotfiles.git ~/.dotfiles
+source ~/.dotfiles/install_light.sh
 ```
 
 #### custom installation with git:
