@@ -1,6 +1,6 @@
 [user]
 
-	email = ryanjsuzuki@gmail.com
-	name = rjsuzuki
+	email = your_email_here
+	name = your_git_alias_here
 [core]
 	autocrlf = input
