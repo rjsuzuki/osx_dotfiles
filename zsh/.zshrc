@@ -65,6 +65,10 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
 
+# Add timestamp to prompt
+# Uncomment the following line if you want to change the command execution time
+# 105 PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}] '$PROMPT
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
